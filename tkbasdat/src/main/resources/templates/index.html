@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="fragments/fragment-header :: head"></head>
+	<body>
+		 <div th:replace="fragments/fragment-header :: navigation"></div>
+		 	<h3 class="page-header">Home</h3>
+		 	<h6>Selamat Datang di Sistem Inforasmai BMNC !</h6>
+		 	<div th:if="${#httpServletRequest.remoteUser}==null" style="margin-bottom:20px" ><a class="btn btn-primary" href="/login">Login</a></div>
+		 <div th:replace="fragments/fragment :: footer"></div>
+	</body>
+</html>
