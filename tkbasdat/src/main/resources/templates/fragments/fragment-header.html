@@ -9,7 +9,7 @@
 		 <div th:fragment="navigation">
 		 <!-- Navigation -->
 			 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="#">SIRUANG</a>
+			<a class="navbar-brand" href="#">BMNC</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -22,18 +22,18 @@
 			 			<a class="nav-link" href="/">Home</a>
 			 		</li>
 			 		<li class="nav-item">
-			 			<a class="nav-link" href="/ruang/viewall">Daftar Ruangan</a>
+			 			<a class="nav-link" href="/berita">Berita</a>
 			 		</li>
 			 		<li class="nav-item">
-			 			<a class="nav-link" href="ruang/tambah">Menambah Ruangan</a>
+			 			<a class="nav-link" href="/polling">Polling</a>
 			 		</li>
 		 		</ul>
-		 		<div style="display:flex;" th:if="${#httpServletRequest.remoteUser}!=null">
+		 		<!-- <div style="display:flex;" th:if="${#httpServletRequest.remoteUser}!=null">
 		 			<p style="color:white;margin-top:0px;margin-right:20px;margin-bottom:0px;" th:text=" 'Login as ' + ${#httpServletRequest.remoteUser}">Login as</p>
 			 		<form  th:action="@{/logout}" method="post">
 						<input type="submit" value="Sign Out"/>
 					</form>
-		 		</div>
+		 		</div> -->
 	 		</div>
  		</nav>
  		<!-- Title -->
