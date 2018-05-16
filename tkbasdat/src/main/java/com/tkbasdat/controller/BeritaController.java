@@ -11,6 +11,11 @@ public class BeritaController {
 		model.addAttribute("title","All Berita");
 		return "viewAllBerita";
 	}
+	@RequestMapping("/berita/detail")
+	public String detailBerita(Model model) {
+		model.addAttribute("title","Best practices for developing iOS application with Tensorflow integration by the Google AI team.");
+		return "viewBerita";
+	}
 	@RequestMapping("/berita/rating")
 	public String ratingBerita(Model model) {
 		model.addAttribute("title","Rate the News!");
@@ -18,7 +23,7 @@ public class BeritaController {
 	}
 	@RequestMapping("/berita/comment")
 	public String commentBerita(Model model) {
-		model.addAttribute("title","Comment the News!");
+		model.addAttribute("title","Give comment!");
 		return "comment";
 	}
 }
