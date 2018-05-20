@@ -25,20 +25,15 @@
 			 		<li class="nav-item">
 			 			<a class="nav-link header_text" href="/">Home</a>
 			 		</li>
-			 		<div style="display:flex;" th:if="${#httpServletRequest.remoteUser}!=null">
-			 		<li class="nav-item">
-			 			<a class="nav-link header_text" th:href="'/narasumber/'+${#httpServletRequest.getRemoteUser()}">Profil</a>
-			 		</li>
-			 		</div>
 			 		<li class="nav-item">
 			 			<a class="nav-link header_text" href="/berita">Berita</a>
 			 		</li>
 			 		<li class="nav-item">
-			 			<a class="nav-link header_text" href="/polling/lihat">Polling</a>
+			 			<a class="nav-link header_text" href="/polling">Polling</a>
 			 		</li>
 		 		</ul>
 		 		<div style="display:flex;" th:if="${#httpServletRequest.remoteUser}!=null">
-		 			<p style="color:#757575!important;margin-top:4.5%;margin-right:20px;margin-bottom:0px;" th:text=" 'Hi, ' + ${#httpServletRequest.getRemoteUser()}">Hi, there</p>
+		 			<p style="color:#757575!important;margin-top:4.5%;margin-right:20px;margin-bottom:0px;" th:text=" 'Hi, ' + ${#httpServletRequest.remoteUser}">Hi, there</p>
 		 			<img class="header_icon_user" src="/images/icon_nav_user_default.png">
 		 			<div class="header_icon_separator"></div>
 			 		<form style="margin-top:4.5%;" th:action="@{/logout}" method="post">
