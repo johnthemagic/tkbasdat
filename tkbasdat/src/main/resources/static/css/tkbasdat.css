@@ -99,7 +99,6 @@
 .icon_rate {
 	width: 50px;
 	transition: transform .2s; /* Animation */
-	margin-right: 20px;
 }
 
 .icon_rate:hover {
@@ -142,6 +141,7 @@
 }
 
 .button-comment {
+	text-align:center;
 	border:none;
 	background-color:#33b5e5!important;
 	color: #fff!important;

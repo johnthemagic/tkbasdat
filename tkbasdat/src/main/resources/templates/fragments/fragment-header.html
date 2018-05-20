@@ -13,7 +13,7 @@
 		 <div th:fragment="navigation">
 		 <!-- Navigation -->
 			 <nav class="navbar navbar-expand-lg header_google">
-			<a class="navbar-brand" href="#">BMNC</a>
+			<a class="navbar-brand" href="/">BMNC</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -44,6 +44,9 @@
 			 		<form style="margin-top:4.5%;" th:action="@{/logout}" method="post">
 						<input style="border:none;" type="submit" value="Sign Out"/>
 					</form>
+		 		</div>
+		 		<div style="display:flex;" th:if="${#httpServletRequest.remoteUser}==null">
+		 			<a class="button-comment" th:href="@{/login}"><font color="white">Login</font></a>
 		 		</div>
 	 		</div>
  		</nav>

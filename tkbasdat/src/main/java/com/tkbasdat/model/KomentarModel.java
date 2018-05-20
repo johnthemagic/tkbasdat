@@ -1,9 +1,11 @@
 package com.tkbasdat.model;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class KomentarModel {
 	private Date tanggal;
+	private Timestamp jam;
 	private String konten;
 	private String nama_user;
 	private String email_user;
@@ -15,6 +17,14 @@ public class KomentarModel {
 	}
 	
 	public Date getTanggal() {
+		return this.tanggal;
+	}
+	
+	public void setJam(Date tanggal) {
+		this.tanggal = tanggal;
+	}
+	
+	public Date getJam() {
 		return this.tanggal;
 	}
 	

@@ -14,6 +14,8 @@ public class BeritaModel {
 	private String judul;
 	private String topik;
 	private String created_at;
-	
+	private String updated_at;
+	private String rerata_rating;
+	private String provinsi;
 	
 }
