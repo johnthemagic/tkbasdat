@@ -9,13 +9,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.tkbasdat.model.BeritaModel;
+import com.tkbasdat.model.KomentarModel;
 import com.tkbasdat.service.BeritaService;
+import com.tkbasdat.service.KomentarService;
 
 @Controller
 public class BeritaController {
 	
 	@Autowired
 	BeritaService beritaDAO;
+	
+	@Autowired
+    KomentarService komentarDAO;
 	
 	@RequestMapping("/berita")
 	public String berita(Model model) {
@@ -32,8 +37,11 @@ public class BeritaController {
         BeritaModel berita = beritaDAO.selectBerita(url);
 
         if (berita != null) {
+        		List<KomentarModel> komentars = komentarDAO.selectAllKomentarByUrl(berita.getUrl());
             model.addAttribute ("berita", berita);
-            return "view-berita";
+            model.addAttribute("komentars",komentars);
+            model.addAttribute("title",berita.getJudul());
+            return "viewBerita";
         } else {
             model.addAttribute ("berita", berita);
             return "not-found";

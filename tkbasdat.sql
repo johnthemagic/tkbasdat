@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 20, 2018 at 04:29 PM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.11
+-- Host: localhost
+-- Generation Time: May 20, 2018 at 10:17 PM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `temp_basdat`
+-- Database: `tkbasdat`
 --
 
 -- --------------------------------------------------------
@@ -93,6 +93,13 @@ CREATE TABLE `komentar` (
   `url_user` varchar(50) NOT NULL,
   `url_berita` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `komentar`
+--
+
+INSERT INTO `komentar` (`id`, `tanggal`, `jam`, `konten`, `nama_user`, `email_user`, `url_user`, `url_berita`) VALUES
+(3, '2018-05-20 19:33:38', '02:33:38', 'I like how they explain the detail with clear yet understandable sentences', 'Yohannes', 'john.magic@zimbra.com', '/narasumber/Yohannes', 'http://1und1.de');
 
 -- --------------------------------------------------------
 
@@ -235,6 +242,13 @@ CREATE TABLE `rating` (
   `ip_address` varchar(50) NOT NULL,
   `nilai` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `rating`
+--
+
+INSERT INTO `rating` (`url_berita`, `ip_address`, `nilai`) VALUES
+('http://1und1.de', '0:0:0:0:0:0:0:1', 5);
 
 -- --------------------------------------------------------
 
@@ -529,6 +543,16 @@ ALTER TABLE `universitas`
 --
 ALTER TABLE `user_account`
   ADD PRIMARY KEY (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `komentar`
+--
+ALTER TABLE `komentar`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
