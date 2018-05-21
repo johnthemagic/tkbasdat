@@ -27,6 +27,7 @@ public class KomentarController {
 	@RequestMapping("/komentar")
     public String showFormKomentar (Model model,
     		@RequestParam(value="url", required = true) String url) {
+		model.addAttribute("title","Give comment!");
 		model.addAttribute ("url", url);
         return "comment";
     }

@@ -22,6 +22,7 @@ public class RatingController {
 		RatingModel rating = ratingDAO.selectRatingByIP(request.getRemoteAddr());
 		
 		if(rating == null) {
+			model.addAttribute("title","Rate the News!");
 			model.addAttribute ("url", url);
 	        return "rating";
 		} else {
