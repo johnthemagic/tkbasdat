@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.apache.ibatis.annotations.Insert;
 
 import com.tkbasdat.model.BeritaModel;
@@ -24,4 +25,7 @@ public interface BeritaMapper {
 	
 	@Insert("insert into berita (url,judul,topik,created_at,updated_at,jumlah_kata,rerata_rating,id_universitas) values (#{url},#{judul},#{topik},#{created_at},#{updated_at},#{jumlah_kata},#{rerata_rating},#{id_universitas})")
 	void addBerita(OriginalBeritaModel berita);
+	
+	@Update("UPDATE berita SET rerata_rating = #{rerata_rating} WHERE url = #{url}")
+    void updateRerataRating(@Param("rerata_rating") double rerata_rating, @Param("url") String url);
 }

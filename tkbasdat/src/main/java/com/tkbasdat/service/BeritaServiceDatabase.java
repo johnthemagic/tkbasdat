@@ -48,4 +48,9 @@ public BeritaServiceDatabase () {}
 	public void addBerita(OriginalBeritaModel berita) {
 		beritaMapper.addBerita(berita);
 	}
+
+	@Override
+	public void updateRerataRating(double rerata_rating, String url) {
+		beritaMapper.updateRerataRating(rerata_rating, url);
+	}
 }

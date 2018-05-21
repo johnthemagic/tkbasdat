@@ -12,13 +12,18 @@ public class RatingServiceDatabase implements RatingService {
 	private RatingMapper ratingMapper;
 	
 	@Override
-	public RatingModel selectRatingByIP(String ip) {
-		return ratingMapper.selectRatingByIP(ip);
+	public RatingModel selectRatingByIPAndUrl(String ip, String url) {
+		return ratingMapper.selectRatingByIPAndUrl(ip, url);
 	}
 
 	@Override
 	public void addRating(RatingModel rating) {
 		ratingMapper.addRating(rating);
+	}
+
+	@Override
+	public double selectAvgRatingByUrl(String url_berita) {
+		return ratingMapper.selectAvgRatingByUrl(url_berita);
 	}
 
 }
